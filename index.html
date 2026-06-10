@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spiantoor2791</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        /* নেভিগেশন বার */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 15, 0.7);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4facfe;
+        }
+
+        .login-btn {
+            background: transparent;
+            border: 1px solid #4facfe;
+            padding: 0.5rem 1.2rem;
+            border-radius: 8px;
+            color: #4facfe;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            background: #4facfe;
+            color: #fff;
+        }
+
+        /* মেন কন্টেন্ট */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        /* হিরো সেকশন */
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff, #4facfe);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            margin-bottom: 2rem;
+        }
+
+        /* সার্চ বক্স */
+        .chat-container {
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .input-wrapper {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        textarea {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1rem;
+            padding: 0.5rem;
+            resize: none;
+            outline: none;
+            font-family: inherit;
+        }
+
+        textarea::placeholder {
+            color: #666;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .send-btn {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            border: none;
+            padding: 0.7rem 2rem;
+            border-radius: 10px;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .send-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .file-btn {
+            background: transparent;
+            border: 1px solid #4facfe;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            color: #4facfe;
+            cursor: pointer;
+        }
+
+        /* ফিচার সেকশন */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #4facfe;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
+
+        /* রেসপন্সিভ */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .container {
+                padding: 6rem 1rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">DeepSeek</div>
+        <div class="nav-links">
+            <a href="#">হোম</a>
+            <a href="#">ফিচার</a>
+            <a href="#">প্রাইসিং</a>
+            <button class="login-btn">সাইন ইন</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="hero">
+            <h1>DeepSeek - আপনার AI সহায়ক</h1>
+            <p>স্মার্ট, দ্রুত এবং নির্ভুল - যেকোনো প্রশ্নের উত্তর পেতে এখনই ব্যবহার করুন</p>
+        </div>
+
+        <div class="chat-container">
+            <div class="input-wrapper">
+                <textarea rows="3" placeholder="যেকোনো কিছু জিজ্ঞাসা করুন..."></textarea>
+                <div class="button-group">
+                    <button class="file-btn">📎 ফাইল আপলোড</button>
+                    <button class="send-btn">প্রেরণ করুন →</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>দ্রুত প্রতিক্রিয়া</h3>
+                <p>সেকেন্ডের মধ্যে উত্তর পান</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>নির্ভুল তথ্য</h3>
+                <p>আপডেটেড এবং সঠিক উত্তর</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>নিরাপদ</h3>
+                <p>আপনার ডাটা সম্পূর্ণ সুরক্ষিত</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3>২৪/৭ সাপোর্ট</h3>
+                <p>যেকোনো সময় সহায়তা</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
